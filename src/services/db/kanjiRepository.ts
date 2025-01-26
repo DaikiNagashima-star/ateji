@@ -1,5 +1,14 @@
-import { db } from '../firebase';
-import { collection, doc, setDoc, deleteDoc, getDocs, query, orderBy } from 'firebase/firestore';
+import { db } from '../../lib/firebase';
+import { 
+  collection, 
+  doc, 
+  setDoc, 
+  deleteDoc, 
+  getDocs, 
+  query, 
+  orderBy,
+  serverTimestamp
+} from 'firebase/firestore';
 import type { KanjiResult } from '../../types';
 
 export async function saveKanji(userId: string, kanji: KanjiResult) {
@@ -7,7 +16,7 @@ export async function saveKanji(userId: string, kanji: KanjiResult) {
     const kanjiRef = doc(collection(db, `users/${userId}/savedKanji`));
     await setDoc(kanjiRef, {
       ...kanji,
-      savedAt: new Date().toISOString()
+      savedAt: serverTimestamp()
     });
     return kanjiRef.id;
   } catch (error) {

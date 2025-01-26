@@ -26,9 +26,17 @@ const exampleKanji = [
   { kanji: "智子", reading: "tomoko", meaning: "Wise Child" },
   { kanji: "大和", reading: "yamato", meaning: "Great Harmony" },
   { kanji: "恵美", reading: "megumi", meaning: "Blessed Beauty" },
-  { kanji: "誠司", reading: "seiji", meaning: "Sincere Leader" }
+  { kanji: "誠司", reading: "seiji", meaning: "Sincere Leader" },
+  { kanji: "陽菜", reading: "hina", meaning: "Sunny Vegetables" },
+  { kanji: "悠人", reading: "yuuto", meaning: "Calm Person" },
+  { kanji: "優花", reading: "yuka", meaning: "Gentle Flower" },
+  { kanji: "千夏", reading: "chinatsu", meaning: "Thousand Summers" },
+  { kanji: "涼介", reading: "ryousuke", meaning: "Refreshing Help" },
+  { kanji: "愛美", reading: "manami", meaning: "Beautiful Love" },
+  { kanji: "直樹", reading: "naoki", meaning: "Honest Tree" },
+  { kanji: "美羽", reading: "miu", meaning: "Beautiful Wings" },
+  { kanji: "蓮", reading: "ren", meaning: "Lotus" }
 ];
-
 export function SlidingKanji() {
   return (
     <div className="relative w-full overflow-hidden h-32 bg-gradient-to-b from-slate-900/50 to-transparent">

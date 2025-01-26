@@ -12,11 +12,11 @@ export async function generateKanjiNames(name: string): Promise<KanjiResult[]> {
       messages: [
         {
           role: "system",
-          content: "You are a Japanese language expert specializing in name translations and kanji character meanings. Generate exactly 10 kanji variations for each name, following the format precisely. Use English (romaji) for readings instead of hiragana."
+          content: "You are a Japanese language expert specializing in name translations and kanji character meanings. Generate exactly 10 kanji variations for each name without any other symbols, following the format precisely. Use English (romaji) for readings instead of hiragana."
         },
         {
           role: "user",
-          content: `Create 10 kanji name variations for "${name}" in Japanese. Each variation must follow this exact format with no deviations, using English (romaji) for readings:
+          content: `Create 10 kanji name variations for "${name}" in Japanese. Only showing up kanji for the kanji part. Each variation must follow this exact format with no deviations, using English (romaji) for readings:
 
 [kanji] (romaji)
 Meaning: [meaning]
@@ -28,7 +28,7 @@ Meaning: Beautiful Chronicles
 Explanation: "美" (mi) means "beauty" and "紀" (ki) means "chronicles" or "records." This name represents the idea of recording or preserving beauty in some way, such as through art or writing.`
         }
       ],
-      model: "mixtral-8x7b-32768",
+      model: "llama3-70b-8192",
       temperature: 0.7,
       max_tokens: 2000,
       top_p: 1,

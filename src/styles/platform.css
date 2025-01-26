@@ -1,0 +1,13 @@
+/* iOS-specific styles */
+.ios {
+  /* Add rounded corners and shadows */
+  --ios-radius: 10px;
+  --ios-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Android-specific styles */
+.android {
+  /* Material Design elevation */
+  .elevation-1 { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+  .elevation-2 { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16); }
+}
