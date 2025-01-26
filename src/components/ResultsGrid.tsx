@@ -8,9 +8,14 @@ interface ResultsGridProps {
 
 export function ResultsGrid({ results }: ResultsGridProps) {
   return (
-    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
       {results.map((result, index) => (
-        <KanjiCard key={index} {...result} />
+        <div 
+          key={index}
+          className={`opacity-0 float-in float-in-delay-${index + 1}`}
+        >
+          <KanjiCard {...result} index={index} />
+        </div>
       ))}
     </div>
   );

@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { NameInput } from './components/NameInput';
 import { ResultsGrid } from './components/ResultsGrid';
 import { Features } from './components/Features';
+import { SlidingKanji } from './components/SlidingKanji';
 import { KanjiResult } from './types';
 import { generateKanjiNames } from './services/groqApi';
 
@@ -39,6 +40,8 @@ function App() {
 
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto mb-16">
+          <SlidingKanji />
+          
           <NameInput
             name={name}
             isLoading={isLoading}

@@ -16,7 +16,7 @@ export function NameInput({ name, isLoading, onChange, onSubmit }: NameInputProp
           type="text"
           value={name}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="あなたの名前を入力してください"
+          placeholder="Enter your name to convert to kanji"
           className="w-full px-6 py-4 bg-white/10 rounded-lg backdrop-blur-sm 
                    border border-white/20 text-white placeholder-gray-400
                    focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -32,7 +32,7 @@ export function NameInput({ name, isLoading, onChange, onSubmit }: NameInputProp
           {isLoading ? (
             <Loader2 className="w-5 h-5 animate-spin" />
           ) : (
-            '変換'
+            'Convert'
           )}
         </button>
       </div>

@@ -7,23 +7,73 @@
     font-family: 'Japanese';
     src: url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
   }
+
+  body {
+    @apply bg-gradient-to-b from-slate-900 to-slate-800 text-white min-h-screen;
+  }
 }
 
-.font-japanese {
-  font-family: 'Noto Serif JP', serif;
-}
-
-@keyframes fade-in {
-  from {
+@keyframes slideIn {
+  0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateX(-100%);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
+
+.slide-in {
+  animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.slide-out {
+  animation: slideOut 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-in-delay-1 { animation-delay: 0s; }
+.slide-in-delay-2 { animation-delay: 0.2s; }
+.slide-in-delay-3 { animation-delay: 0.4s; }
+
+.slide-out-delay-1 { animation-delay: 0s; }
+.slide-out-delay-2 { animation-delay: 0.2s; }
+.slide-out-delay-3 { animation-delay: 0.4s; }
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.float-in {
+  animation: floatIn 0.5s ease-out forwards;
+}
+
+.float-in-delay-1 { animation-delay: 0.1s; }
+.float-in-delay-2 { animation-delay: 0.2s; }
+.float-in-delay-3 { animation-delay: 0.3s; }
+.float-in-delay-4 { animation-delay: 0.4s; }
+.float-in-delay-5 { animation-delay: 0.5s; }
+.float-in-delay-6 { animation-delay: 0.6s; }
+.float-in-delay-7 { animation-delay: 0.7s; }
+.float-in-delay-8 { animation-delay: 0.8s; }
+.float-in-delay-9 { animation-delay: 0.9s; }
+.float-in-delay-10 { animation-delay: 1s; }
