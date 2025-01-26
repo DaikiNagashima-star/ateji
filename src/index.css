@@ -55,11 +55,11 @@
 @keyframes floatIn {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -77,3 +77,16 @@
 .float-in-delay-8 { animation-delay: 0.8s; }
 .float-in-delay-9 { animation-delay: 0.9s; }
 .float-in-delay-10 { animation-delay: 1s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
