@@ -1,6 +1,8 @@
-import React from 'react';
-import { ArrowLeft } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Heart } from 'lucide-react';
 import { ShareButtons } from './ShareButtons';
+import { useAuth } from '../contexts/AuthContext';
+import { saveKanji, removeKanji } from '../services/userService';
 import type { KanjiResult } from '../types';
 
 interface KanjiDetailProps {
@@ -9,6 +11,29 @@ interface KanjiDetailProps {
 }
 
 export function KanjiDetail({ kanji, onBack }: KanjiDetailProps) {
+  const { user } = useAuth();
+  const [isSaved, setIsSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
+
+  const handleSaveToggle = async () => {
+    if (!user) return;
+
+    try {
+      setSaving(true);
+      if (isSaved) {
+        await removeKanji(user.uid, kanji.id!);
+        setIsSaved(false);
+      } else {
+        await saveKanji(user.uid, kanji);
+        setIsSaved(true);
+      }
+    } catch (error) {
+      console.error('Error toggling save:', error);
+    } finally {
+      setSaving(false);
+    }
+  };
+
   return (
     <div className="animate-fade-in">
       <button
@@ -31,7 +56,23 @@ export function KanjiDetail({ kanji, onBack }: KanjiDetailProps) {
             {kanji.meaning}
           </p>
           
-          <ShareButtons kanji={kanji} />
+          <div className="flex justify-center gap-4 mb-6">
+            {user && (
+              <button
+                onClick={handleSaveToggle}
+                disabled={saving}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                  isSaved
+                    ? 'bg-red-500 hover:bg-red-600'
+                    : 'bg-white/10 hover:bg-white/20'
+                }`}
+              >
+                <Heart className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
+                <span>{isSaved ? 'Saved' : 'Save'}</span>
+              </button>
+            )}
+            <ShareButtons kanji={kanji} />
+          </div>
         </div>
 
         <div className="space-y-6 mt-8">
