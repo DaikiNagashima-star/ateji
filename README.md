@@ -2,7 +2,7 @@
 
 A modern web application that transforms names into beautiful Japanese kanji characters using AI technology.
 
-https://images.unsplash.com/photo-1505940545481-2cac7ae15782?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2Fuaml8ZW58MHx8MHx8fDA%3D
+![Ateji Screenshot](https://images.unsplash.com/photo-1505940545481-2cac7ae15782?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2Fuaml8ZW58MHx8MHx8fDA%3D)
 
 ## Features
 
